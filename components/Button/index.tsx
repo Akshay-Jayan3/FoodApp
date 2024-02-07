@@ -4,7 +4,7 @@ import { useColorScheme } from '@/components/useColorScheme';
 import Colors from '@/constants/Colors';
 import { Text, View } from '@/components/Themed';
 import {
-    TouchableOpacity,
+    Pressable,
 } from "react-native";
 
 type ButttonProp = {
@@ -20,9 +20,9 @@ const Button = (props: ButttonProp) => {
     };
 
     return (
-            <TouchableOpacity style={containerStyle}>
+            <Pressable style={containerStyle}>
                 <Text style={{ color: props.active ? Colors[colorScheme ?? 'light'].primaryLabel : Colors[colorScheme ?? 'light'].terneryLabel, fontWeight: props.active ? "600" : "normal" }}>{props.title}</Text>
-            </TouchableOpacity>
+            </Pressable>
     );
 };
 
