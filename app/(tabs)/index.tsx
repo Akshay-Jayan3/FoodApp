@@ -24,12 +24,13 @@ const styles = StyleSheet.create({
   top: {
     flex: 0.1,
     justifyContent:"center",
-    alignItems:"center",
+    padding:8
   },
   mainTab:{
     flexDirection:"row",
     backgroundColor:Colors[colorScheme ?? 'light'].secondary,
     borderRadius:50
+    
 
   },
   middle: {
