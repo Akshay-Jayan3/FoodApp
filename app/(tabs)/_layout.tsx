@@ -27,14 +27,13 @@ export default function TabLayout() {
         // to prevent a hydration error in React Navigation v6.
         headerShown: useClientOnlyValue(false, true),
         tabBarShowLabel:false,
-        tabBarStyle:{height:80}
+        tabBarStyle:{height:64}
       }}>
       <Tabs.Screen
         name="index"
         options={{
           title:"Home",
           tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} style={{ marginBottom: 5 }}/>,
-          headerTransparent:true,
           headerTitle:"Hi Akshay",
           headerRight: () => (
             <Link href="/modal" asChild>
