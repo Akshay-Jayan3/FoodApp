@@ -1,5 +1,5 @@
 import React from 'react';
-import { SimpleLineIcons } from '@expo/vector-icons';
+import { FontAwesome6 } from '@expo/vector-icons';
 import { Link, Tabs } from 'expo-router';
 import { Pressable } from 'react-native';
 
@@ -9,11 +9,11 @@ import { useClientOnlyValue } from '@/components/useClientOnlyValue';
 
 // You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
 function TabBarIcon(props: {
-  name: React.ComponentProps<typeof SimpleLineIcons>['name'];
+  name: React.ComponentProps<typeof FontAwesome6>['name'];
   color: string;
   style:{}
 }) {
-  return <SimpleLineIcons size={24} {...props} />;
+  return <FontAwesome6 size={24} {...props} />;
 }
 
 export default function TabLayout() {
@@ -33,7 +33,7 @@ export default function TabLayout() {
         name="index"
         options={{
           title:"Home",
-          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} style={{ marginBottom: 5 }}/>,
+          tabBarIcon: ({ color }) => <TabBarIcon name="house" color={color} style={{ marginBottom: 5 }}/>,
           headerTitle:"Hi Akshay",
           headerRight: () => (
             <Link href="/modal" asChild>
@@ -54,21 +54,21 @@ export default function TabLayout() {
         name="products"
         options={{
           title: 'Product',
-          tabBarIcon: ({ color }) => <TabBarIcon name="bag" color={color} style={{ marginBottom: 5 }}/>,
+          tabBarIcon: ({ color }) => <TabBarIcon name="bag-shopping" color={color} style={{ marginBottom: 5 }}/>,
         }}
       />
        <Tabs.Screen
         name="orders"
         options={{
           title: 'Orders',
-          tabBarIcon: ({ color }) => <TabBarIcon name="basket" color={color} style={{ marginBottom: 5 }}/>,
+          tabBarIcon: ({ color }) => <TabBarIcon name="cart-shopping" color={color} style={{ marginBottom: 5 }}/>,
         }}
       />
        <Tabs.Screen
         name="profile"
         options={{
           title: 'Profile',
-          tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} style={{ marginBottom: 5 }}/>,
+          tabBarIcon: ({ color }) => <TabBarIcon name="user-large" color={color} style={{ marginBottom: 5 }}/>,
         }}
       />
     </Tabs>

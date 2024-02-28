@@ -1,26 +1,25 @@
 import * as React from "react";
 import { styles } from "./styles";
-import { useColorScheme } from "@/components/useColorScheme";
-import Colors from "@/constants/Colors";
 import { Text, View } from "@/components/Themed";
-
+import { Image, ImageBackground, ImageSourcePropType } from "react-native";
 
 type CardProp = {
-  item:{}
+  item: {
+    text: string;
+    backgroundImage?: ImageSourcePropType;
+  };
 };
 
 const BigCard = (props: CardProp) => {
-  // const colorScheme = useColorScheme();
-  // const containerStyle = {
-  //     ...styles.container,
-  //     backgroundColor: props.active ? Colors[colorScheme ?? 'light'].primary : Colors[colorScheme ?? 'light'].secondary,
-  // };
-
   return (
     <View style={styles.card}>
-     <View>
-        <Text>Hellohhss</Text>
-     </View>
+      <Image style={styles.cardImage} source={props.item.backgroundImage} />
+      <View style={styles.details}>
+      <Text style={styles.dishName}>{props.item.text}</Text>
+      <Text style={styles.price}>{props.item.text}</Text>
+      <Text style={styles.cardText}>akshay jayan</Text>
+      </View>
+      
     </View>
   );
 };

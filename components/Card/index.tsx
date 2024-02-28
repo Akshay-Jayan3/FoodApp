@@ -1,12 +1,16 @@
 import * as React from "react";
 import { styles } from "./styles";
 import { useColorScheme } from "@/components/useColorScheme";
-import Colors from "@/constants/Colors";
+
 import { Text, View } from "@/components/Themed";
+import { Image, ImageBackground, ImageSourcePropType } from "react-native";
 
 
 type CardProp = {
-  item:{}
+  item: {
+    text: string;
+    backgroundImage?: ImageSourcePropType;
+  };
 };
 
 const Card = (props: CardProp) => {
@@ -18,9 +22,20 @@ const Card = (props: CardProp) => {
 
   return (
     <View style={styles.card}>
-     <View>
-        <Text>Helloss</Text>
-     </View>
+      <View style={styles.textWrapper}>
+        <Text style={styles.maintext}>{props.item.text}</Text>
+        <Text style={styles.subtext}> 50% Discount</Text>
+      </View>
+      <Image source={props.item.backgroundImage}
+         style={styles.backgroundImage}/>
+      {/* <ImageBackground
+        source={props.item.backgroundImage} // Replace with the actual path to your image
+        style={styles.backgroundImage}
+      >
+        
+
+       
+      </ImageBackground> */}
     </View>
   );
 };
